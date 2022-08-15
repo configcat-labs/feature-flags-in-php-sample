@@ -23,3 +23,9 @@ npm run dev
 ```sh
 php artisan serve
 ```
+
+## Dev Notes (WIP)
+
+- Get all books
+
+`https://localhost:8000/api/books`
