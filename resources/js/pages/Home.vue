@@ -24,7 +24,7 @@ export default {
   <div>
     <Navbar />
     <Banner />
-    <Books v-if="books" :books="books" />
+    <Books v-if="books.length > 0" :books="books" />
     <NotAvailable v-else />
   </div>
 </template>

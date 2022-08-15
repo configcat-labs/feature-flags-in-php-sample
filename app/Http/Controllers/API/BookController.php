@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Book;
 use Illuminate\Http\Request;
 
+// Import the autoload.php file which includes the ConfigCat client SDK
+require '../vendor/autoload.php';
+
 class BookController extends Controller
 {
     /**
@@ -15,8 +18,22 @@ class BookController extends Controller
      */
     public function index()
     {
+        // Create the ConfigCat client with your SDK key
+        $client = new \ConfigCat\ConfigCatClient("237aCC5JyUGIRXx6EXvMyQ/cau4ameHhEmW966cOLTudA");
+
+        // Create a variable to store the current state of the feature flag
+        $canshowbooks = $client->getValue("canshowbooks", false);
+
         $books = Book::all();
-        return response() -> json($books);
+
+        // Add a conditional block...
+        if ($canshowbooks) {
+            // Return the list of books if the feature flag is turned on
+            return response()->json($books);
+        } else {
+            // Return an empty array otherwise
+            return response()->json([]);
+        }
     }
 
     /**
