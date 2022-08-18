@@ -7,7 +7,7 @@ This sample PHP app which uses the Laravel framework and Vue.js on the frontend.
 
 Here's what it looks like:
 
-<!-- TODO: Add snapshot here -->
+![Snapshot of sample app](https://user-images.githubusercontent.com/74829200/185419815-6f6dc8a5-bbc3-426a-b0f5-5827fe84c821.png)
 
 ## Software requirements
 - Composer version 2 - a tool for managing dependencies in PHP
